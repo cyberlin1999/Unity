@@ -310,8 +310,6 @@ GameObject:
   - component: {fileID: 1424385089}
   - component: {fileID: 1424385087}
   - component: {fileID: 1424385086}
-  - component: {fileID: 1424385085}
-  - component: {fileID: 1424385084}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -319,31 +317,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1424385084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424385083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!135 &1424385085
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424385083}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1424385086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -421,8 +394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 1424385083}
   L: 6
-  x_0: 0
-  v_0: 1
+  x_0: 1
+  v_0: 0
 --- !u!1 &1773196331
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,9 +407,9 @@ GameObject:
   - component: {fileID: 1773196337}
   - component: {fileID: 1773196336}
   - component: {fileID: 1773196335}
-  - component: {fileID: 1773196334}
   - component: {fileID: 1773196333}
   - component: {fileID: 1773196332}
+  - component: {fileID: 1773196334}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -444,18 +417,41 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!75 &1773196332
-ConstantForce:
+--- !u!59 &1773196332
+HingeJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773196331}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: -5.05, y: 3.24, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0, z: 5}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!54 &1773196333
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -466,25 +462,26 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1773196334
-SphereCollider:
+--- !u!114 &1773196334
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773196331}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fe26a5d9cf33d47986da282f5e0cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main_object: {fileID: 1773196331}
+  help_object: {fileID: 1424385083}
 --- !u!23 &1773196335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -542,7 +539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773196331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 5.05, y: -3.24, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

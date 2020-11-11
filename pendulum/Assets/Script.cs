@@ -7,7 +7,7 @@ using System;
 public class Script : MonoBehaviour
 {
     public GameObject obj;
-    public float L;
+    public float L=6;
     public float x_0;
     public float v_0;
     private float g = 9.81f;
@@ -30,7 +30,7 @@ public class Script : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         t += Time.fixedDeltaTime;
         float x = A * Mathf.Sin(thetta + omega * t);
