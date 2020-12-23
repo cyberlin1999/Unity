@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0D9E5B8C-44CE-74E5-DBF6-DD34A4FB8A1C}</ProjectGuid>
+    <ProjectGuid>{A395EA3E-FDD5-56D1-545C-8271DD864878}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -55,7 +55,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Force.cs" />
+    <Compile Include="Assets\Camera.cs" />
+    <Compile Include="Assets\Force2.cs" />
+    <Compile Include="Assets\Force1.cs" />
+    <Compile Include="Assets\Force3.cs" />
+    <Compile Include="Assets\Camera2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
